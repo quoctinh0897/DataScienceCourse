@@ -36,6 +36,8 @@ The **COUNTRY** table is described as follows:
 | CAPITAL | VARCHAR2(4) |
 | CODE2 | VARCHAR2(2) |
 
+**Solution**
+
 ```
 select sum(c.population) from city as c left join country as ctr on c.countrycode = ctr.code
 where ctr.continent = 'Asia';
@@ -77,6 +79,8 @@ The **COUNTRY** table is described as follows:
 | HEADOFSTATE | VARCHAR2(32 |
 | CAPITAL | VARCHAR2(4) |
 | CODE2 | VARCHAR2(2) |
+
+**Solution**
 
 ```
 select c.name from city as c left join country as ctr on c.countrycode = ctr.code
@@ -120,6 +124,7 @@ The **COUNTRY** table is described as follows:
 | CAPITAL | VARCHAR2(4) |
 | CODE2 | VARCHAR2(2) |
 
+**Solution**
 
 ```
 select ctr.continent,floor(avg(c.population)) from country as ctr inner join city as c on c.countrycode = ctr.code group by ctr.continent;
@@ -132,6 +137,8 @@ Equilateral: It's a triangle with  sides of equal length.
 Isosceles: It's a triangle with  sides of equal length.
 Scalene: It's a triangle with  sides of differing lengths.
 Not A Triangle: The given values of A, B, and C don't form a triangle.
+
+**Solution**
 
 ```
 select case
