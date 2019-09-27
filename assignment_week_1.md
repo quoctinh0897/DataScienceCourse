@@ -17,6 +17,7 @@ The **CITY** table is described as follows:
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 The **COUNTRY** table is described as follows:
+
 | Field | Type |
 |:----:|:---:|
 | CODE | VARCHAR2(3) |
