@@ -138,6 +138,32 @@ Isosceles: It's a triangle with  sides of equal length.
 Scalene: It's a triangle with  sides of differing lengths.
 Not A Triangle: The given values of A, B, and C don't form a triangle.
 
+**Input Format**
+
+| Colunm | Type |
+|:----:|:---:|
+| A | Integer |
+| B | Integer |
+| C | Integer |
+
+**Sample Input**
+
+| A | B | C |
+|:----:|:---:|:---:|
+| 20 | 20 | 23 |
+| 20 | 20 | 20 |
+| 20 | 21 | 22 |
+| 13 | 14 | 30 |
+
+**Sample Output**
+
+```
+Isosceles
+Equilateral
+Scalene
+Not A Triangle
+```
+
 **Solution**
 
 ```
