@@ -171,3 +171,11 @@ select case
 when A + B <= C then 'Not A Triangle' when A = B AND B = C then 'Equilateral' when A = B or B = C or A = C then 'Isosceles' when A != B or B != C or A != C then 'Scalene' end from TRIANGLES;
 ```
 #### Problem 5
+
+Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table, but did not realize her keyboard's  key was broken until after completing the calculation. She wants your help finding the difference between her miscalculation (using salaries with any zeroes removed), and the actual average salary.
+
+Write a query calculating the amount of error (i.e.:  average monthly salaries), and round it up to the next integer.
+
+```
+select ceil(avg(salary) - avg(replace(salary,'0',''))) from employees
+```
