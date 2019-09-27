@@ -47,7 +47,37 @@ Given the CITY and COUNTRY tables, query the names of all cities where the CONTI
 
 Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
 
-Input Format
+**Input Format**
+
+The **CITY** table is described as follows:
+
+| Field | Type |
+|:----:|:---:|
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+The **COUNTRY** table is described as follows:
+
+| Field | Type |
+|:----:|:---:|
+| CODE | VARCHAR2(3) |
+| NAME | VARCHAR2(44) |
+| CONTINENT | VARCHAR2(13) |
+| REGION | VARCHAR2(25) |
+| SURFACEAREA | NUMBER |
+| INDEPYEAR | VARCHAR2(5) |
+| POPULATION | NUMBER |
+| LIFEEXPECTANCY | VARCHAR2(4) |
+| GNP | NUMBER |
+| GNPOLD | VARCHAR2(9) |
+| LOCALNAME | VARCHAR2(44) |
+| GOVERNMENTFORM | VARCHAR2(44) |
+| HEADOFSTATE | VARCHAR2(32 |
+| CAPITAL | VARCHAR2(4) |
+| CODE2 | VARCHAR2(2) |
+
 ```
 select c.name from city as c left join country as ctr on c.countrycode = ctr.code
 where ctr.continent = 'Africa';
@@ -59,7 +89,37 @@ Given the CITY and COUNTRY tables, query the names of all the continents (COUNTR
 
 Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
 
-Input Format
+**Input Format**
+
+The **CITY** table is described as follows:
+
+| Field | Type |
+|:----:|:---:|
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+The **COUNTRY** table is described as follows:
+
+| Field | Type |
+|:----:|:---:|
+| CODE | VARCHAR2(3) |
+| NAME | VARCHAR2(44) |
+| CONTINENT | VARCHAR2(13) |
+| REGION | VARCHAR2(25) |
+| SURFACEAREA | NUMBER |
+| INDEPYEAR | VARCHAR2(5) |
+| POPULATION | NUMBER |
+| LIFEEXPECTANCY | VARCHAR2(4) |
+| GNP | NUMBER |
+| GNPOLD | VARCHAR2(9) |
+| LOCALNAME | VARCHAR2(44) |
+| GOVERNMENTFORM | VARCHAR2(44) |
+| HEADOFSTATE | VARCHAR2(32 |
+| CAPITAL | VARCHAR2(4) |
+| CODE2 | VARCHAR2(2) |
+
 
 ```
 select ctr.continent,floor(avg(c.population)) from country as ctr inner join city as c on c.countrycode = ctr.code group by ctr.continent;
@@ -74,7 +134,7 @@ Scalene: It's a triangle with  sides of differing lengths.
 Not A Triangle: The given values of A, B, and C don't form a triangle.
 
 ```
-SELECT CASE
-WHEN A + B <= C THEN 'Not A Triangle' WHEN A = B AND B = C THEN 'Equilateral' WHEN A = B OR B = C OR A = C THEN 'Isosceles' WHEN A != B OR B != C OR A != C THEN 'Scalene' END FROM TRIANGLES;
+select case
+when A + B <= C then 'Not A Triangle' when A = B AND B = C then 'Equilateral' when A = B or B = C or A = C then 'Isosceles' when A != B or B != C or A != C then 'Scalene' end from TRIANGLES;
 ```
 #### Problem 5
