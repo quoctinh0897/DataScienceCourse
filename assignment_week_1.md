@@ -176,6 +176,83 @@ Samantha was tasked with calculating the average monthly salaries for all employ
 
 Write a query calculating the amount of error (i.e.:  average monthly salaries), and round it up to the next integer.
 
+**Input Format**
+
+The EMPLOYEES table is described as follows:
+
+| Colunm | Type |
+|:----:|:---:|
+| Id | Integer |
+| Name | String |
+| Salary | Integer |
+
+
+**Solution**
+
 ```
 select ceil(avg(salary) - avg(replace(salary,'0',''))) from employees
+```
+#### Problem 6
+
+We define an employee's total earnings to be their monthly  worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.
+
+**Input Format**
+
+The Employee table containing employee data for a company is described as follows:
+
+| Colunm | Type |
+|:----:|:---:|
+| Employee_id | Integer |
+| Name | String |
+| Months | Integer |
+| Salary | Integer |
+
+
+**Solution**
+
+```
+select salary*months as total, count(*) as cnt from employee
+where salary*months = (select max(salary*months) from employee)
+group by total
+```
+
+#### Problem 7
+
+Query the total population of all cities in CITY where District is California.
+
+**Input Format**
+
+| Colunm | Type |
+|:----:|:---:|
+| ID | Integer |
+| Name | String |
+| CountryCode | String |
+| District | String |
+| Population | Integer |
+
+**Solution**
+
+```
+select sum(population) from city
+where district = 'California'
+```
+
+#### Problem 8
+
+Query the average population for all cities in CITY, rounded down to the nearest integer.
+
+**Input Format**
+
+| Colunm | Type |
+|:----:|:---:|
+| ID | Integer |
+| Name | String |
+| CountryCode | String |
+| District | String |
+| Population | Integer |
+
+**Solution**
+
+```
+select floor(avg(population)) from city
 ```
