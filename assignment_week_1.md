@@ -469,8 +469,118 @@ def fibonacci(n):
     listnum = [0,1]
     for num in range(2,n):
         listnum.append(listnum[num-2] + listnum[num-1])
-    return listnum
+    return listnum[0:n]
 if __name__ == '__main__':
     n = int(input())
     print(list(map(cube, fibonacci(n))))
+```
+
+### Problem 4
+
+The defaultdict tool is a container in the collections class of Python. It's similar to the usual dictionary (dict) container, but the only difference is that a defaultdict will have a default value if that key has not been set yet. If you didn't use a defaultdict you'd have to check to see if that key exists, and if it doesn't, set it to what you want.
+
+In this challenge, you will be given 2 integers, n and m. There are n words, which might repeat, in word group A. There are m  words belonging to word group B . For each m words, check whether the word has appeared in group A or not. Print the indices of each occurrence of m in group A. If it does not appear, print -1.
+
+***Input Format***
+
+The first line contains integers,  and  separated by a space.
+The next  lines contains the words belonging to group .
+The next  lines contains the words belonging to group .
+
+***Output Format***
+
+Output m lines.
+The i line should contain the -1 indexed positions of the occurrences of the i word separated by spaces.
+
+***Sample Input**
+
+```
+5 2
+a
+a
+b
+a
+b
+a
+b
+```
+
+***Sample Output***
+
+```
+1 2 4
+3 5
+```
+
+***Solution***
+
+```
+from collections import defaultdict
+d = defaultdict(list)
+listnum = []
+numA,numB = input().split(' ')
+for i in range(1,int(numA)+1):
+    d[input()].append(i)
+for i in range(int(numB)):
+    listnum.append(input())
+for i in listnum:
+    if(i in d):
+        print(" ".join(map(str,d[i])))
+    else:
+        print(-1)
+```
+
+### Problem 5
+
+***Task**8
+
+You are the manager of a supermarket.
+You have a list of N items together with their prices that consumers bought on a particular day.
+Your task is to print each item_name and net_price in order of its first occurrence.
+
+item_name = Name of the item.
+net_price = Quantity of the item sold multiplied by the price of each item.
+
+***Input Format***
+
+The first line contains the number of items, .
+The next  lines contains the item's name and price, separated by a space.
+
+***Output Format***
+
+Print the item_name and net_price in order of its first occurrence.
+
+***Sample Input**8
+
+```
+9
+BANANA FRIES 12
+POTATO CHIPS 30
+APPLE JUICE 10
+CANDY 5
+APPLE JUICE 10
+CANDY 5
+CANDY 5
+CANDY 5
+POTATO CHIPS 30
+```
+
+***Sample Output***
+
+```
+BANANA FRIES 12
+POTATO CHIPS 60
+APPLE JUICE 20
+CANDY 20
+```
+***Solution***
+
+```
+from collections import OrderedDict
+od = OrderedDict()
+for i in range(int(input())):
+    item, quantity = input().rsplit(' ',1)
+    od[item] = od.get(item, 0) + int(quantity)
+for item, quantity in od.items():
+    print(item, quantity)
 ```
