@@ -256,3 +256,51 @@ Query the average population for all cities in CITY, rounded down to the nearest
 ```
 select floor(avg(population)) from city
 ```
+
+#### Problem 9
+
+Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of 2 decimal places.
+The sum of all values in LONG_W rounded to a scale of 2 decimal places.
+
+**Input Format**
+
+The STATION table is described as follows:
+
+| Colunm | Type |
+|:----:|:---:|
+| ID | Integer |
+| City | String |
+| State | String |
+| lat_n | Integer |
+| long_w | Integer |
+
+**Solution**
+
+```
+select round(sum(lat_n),2),round(sum(long_w),2) from station
+```
+
+#### Problem 10
+
+Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345 . Round your answer to 4 decimal places.
+
+**Input Format**
+
+The STATION table is described as follows:
+
+| Colunm | Type |
+|:----:|:---:|
+| ID | Integer |
+| City | String |
+| State | String |
+| lat_n | Integer |
+| long_w | Integer |
+
+```
+select round(long_w,4) from station
+where lat_n < 137.2345
+order by lat_n desc
+limit 1
+```
