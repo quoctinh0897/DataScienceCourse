@@ -309,7 +309,7 @@ limit 1
 ### Python
 #### Problem 1
 
-Task
+***Task***
 
 Raghu is a shoe shop owner. His shop has N number of shoes.
 He has a list containing the size of each shoe he has in his shop.
@@ -328,7 +328,7 @@ The next  lines contain the space separated values of the  desired by the custom
 
 Print the amount of money earned by Raghu.
 
-Sample Input
+***Sample Input***
 
 ```
 10
@@ -550,7 +550,7 @@ The next  lines contains the item's name and price, separated by a space.
 
 Print the item_name and net_price in order of its first occurrence.
 
-***Sample Input**8
+***Sample Input***
 
 ```
 9
